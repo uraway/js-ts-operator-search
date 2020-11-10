@@ -1,10 +1,11 @@
 import Head from "next/head";
 import React from "react";
 import { Lookup } from "react-rainbow-components";
-import { Description } from "../components";
-import { Data } from "../types/data";
 import { NextPage } from "next";
 import fetch from "isomorphic-fetch";
+import RainbowApplication from "react-rainbow-components/components/Application";
+import { Description } from "../components";
+import { Data } from "../types/data";
 import { getAbsoluteUrl } from "../utils";
 
 type Props = {
@@ -42,7 +43,7 @@ const Home: NextPage<Props> = ({ data }) => {
   };
 
   return (
-    <div>
+    <RainbowApplication>
       <Head>
         <title>JS/TS 演算子検索</title>
         <link rel="icon" href="/favicon.ico" />
@@ -57,7 +58,7 @@ const Home: NextPage<Props> = ({ data }) => {
         onClick={onClear}
       />
       <Description value={value} />
-    </div>
+    </RainbowApplication>
   );
 };
 
