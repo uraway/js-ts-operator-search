@@ -1,14 +1,9 @@
 import React from "react";
 import type { AppProps /*, AppContext */ } from "next/app";
-import RainbowApplication from "react-rainbow-components/components/Application";
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
-  return (
-    <RainbowApplication>
-      <Component {...pageProps} />
-    </RainbowApplication>
-  );
+  return <Component {...pageProps} />;
 };
 
 // Only uncomment this method if you have blocking data requirements for
