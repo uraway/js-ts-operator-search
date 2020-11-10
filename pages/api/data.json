@@ -1,0 +1,27 @@
+[
+  {
+    "label": "<",
+    "description": "小なり演算子です。",
+    "definition": "左辺が右辺より小さいかどうかチェックします。",
+    "link": "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Less_than"
+  },
+  {
+    "label": "<=",
+    "description": "小なりイコール演算子です。",
+    "definition": "左辺が右辺より小さいか等しいかをチェックします。",
+    "link":
+      "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Less_than_or_equal"
+  },
+  {
+    "label": ">",
+    "description": "大なり演算子です。",
+    "definition": "左辺が右辺より大きいかをチェックします。",
+    "link": "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Greater_than"
+  },
+  {
+    "label": ">=",
+    "description": "大なりイコール演算子です。",
+    "definition": "左辺が右辺より大きいか等しいかをチェックします。",
+    "link": "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Greater_than_or_equal"
+  }
+]
