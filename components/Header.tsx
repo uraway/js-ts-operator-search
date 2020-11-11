@@ -16,12 +16,10 @@ export const TopAction = styled.a`
   margin-left: auto;
 `;
 
-type Props = null;
-
 export const Header: NextComponentType<
   NextPageContext,
   unknown,
-  Props
+  unknown
 > = () => {
   return (
     <Wrapper>

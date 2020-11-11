@@ -18,9 +18,7 @@ export const ChildrenWrapper = styled.main`
   padding-left: 20px;
 `;
 
-type Props = {};
-
-export const Layout: NextComponentType<NextPageContext, unknown, Props> = ({
+export const Layout: NextComponentType<NextPageContext, unknown, unknown> = ({
   children,
 }) => (
   <MainWrapper>
