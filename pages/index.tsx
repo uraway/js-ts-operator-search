@@ -5,6 +5,7 @@ import fetch from "isomorphic-fetch";
 import { Description, Layout } from "../components";
 import { Data } from "../types/data";
 import { getAbsoluteUrl } from "../utils";
+import { List } from "../components/List";
 
 type Props = {
   data: Data[];
@@ -29,9 +30,9 @@ const Home: NextPage<Props> = ({ data }) => {
     }
   };
 
-  const onChange = (value: Data) => {
+  const onChange = React.useCallback((value: Data) => {
     setValue(value);
-  };
+  }, []);
 
   const onClear = () => {
     setValue(undefined);
@@ -49,6 +50,7 @@ const Home: NextPage<Props> = ({ data }) => {
         onClick={onClear}
       />
       <Description value={value} />
+      <List options={options} value={value} onClick={onChange} />
     </Layout>
   );
 };
