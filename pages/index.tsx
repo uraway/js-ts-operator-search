@@ -16,10 +16,7 @@ const Home: NextPage<Props> = ({ data }) => {
 
   const filter = (query: string, options: Data[]) => {
     if (query) {
-      return options.filter((item) => {
-        const regex = new RegExp(query, "i");
-        return regex.test(item.label);
-      });
+      return options.filter((item) => item.label.includes(query));
     }
     return [];
   };
