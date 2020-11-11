@@ -22,7 +22,7 @@ const Title = styled.h1`
 
 const Home: NextPage<Props> = ({ data }) => {
   const [value, setValue] = React.useState<Data | undefined>();
-  const [options, setOptions] = React.useState<Data[]>(data);
+  const [options, setOptions] = React.useState<Data[]>(null);
 
   const filter = (query: string, options: Data[]) => {
     if (query) {
@@ -32,10 +32,12 @@ const Home: NextPage<Props> = ({ data }) => {
   };
 
   const onSearch = (inputValue: string) => {
-    if (inputValue) {
+    if (options && inputValue) {
       setOptions(filter(inputValue, options));
+    } else if (inputValue) {
+      setOptions(filter(inputValue, data));
     } else {
-      setOptions(data);
+      setOptions(null);
     }
   };
 
@@ -45,13 +47,12 @@ const Home: NextPage<Props> = ({ data }) => {
 
   const onClear = () => {
     setValue(undefined);
-    setOptions(data);
   };
 
   return (
     <Layout>
       <Lookup
-        id="lookup"
+        id="lookup-1"
         label={<Title>JavaScript/TypeScript 演算子検索</Title>}
         options={options}
         value={value}
