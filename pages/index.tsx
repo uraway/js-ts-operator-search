@@ -2,7 +2,7 @@ import React from "react";
 import { Lookup } from "react-rainbow-components";
 import { NextPage } from "next";
 import fetch from "isomorphic-fetch";
-import { Description } from "../components";
+import { Description, Layout } from "../components";
 import { Data } from "../types/data";
 import { getAbsoluteUrl } from "../utils";
 
@@ -41,10 +41,10 @@ const Home: NextPage<Props> = ({ data }) => {
   };
 
   return (
-    <>
+    <Layout>
       <Lookup
         id="lookup"
-        label="JS/TS 演算子検索"
+        label="JavaScript/TypeScript 演算子検索"
         options={options}
         value={value}
         onChange={onChange}
@@ -52,7 +52,7 @@ const Home: NextPage<Props> = ({ data }) => {
         onClick={onClear}
       />
       <Description value={value} />
-    </>
+    </Layout>
   );
 };
 
