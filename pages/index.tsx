@@ -2,10 +2,9 @@ import React from "react";
 import { Lookup } from "react-rainbow-components";
 import { NextPage } from "next";
 import fetch from "isomorphic-fetch";
-import { Description, Layout } from "../components";
+import { Description, Layout, List } from "../components";
 import { Data } from "../types/data";
 import { getAbsoluteUrl } from "../utils";
-import { List } from "../components/List";
 
 type Props = {
   data: Data[];
