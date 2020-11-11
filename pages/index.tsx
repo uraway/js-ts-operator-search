@@ -5,10 +5,20 @@ import fetch from "isomorphic-fetch";
 import { Description, Layout, List } from "../components";
 import { Data } from "../types/data";
 import { getAbsoluteUrl } from "../utils";
+import styled from "styled-components";
 
 type Props = {
   data: Data[];
 };
+
+const Title = styled.h1`
+  margin-top: 20px;
+  transition: all 350ms ease;
+  font-size: 25px;
+  line-height: 1em;
+  font-weight: 400;
+  margin-bottom: 29px;
+`;
 
 const Home: NextPage<Props> = ({ data }) => {
   const [value, setValue] = React.useState<Data | undefined>();
@@ -35,13 +45,14 @@ const Home: NextPage<Props> = ({ data }) => {
 
   const onClear = () => {
     setValue(undefined);
+    setOptions(data);
   };
 
   return (
     <Layout>
       <Lookup
         id="lookup"
-        label="JavaScript/TypeScript 演算子検索"
+        label={<Title>JavaScript/TypeScript 演算子検索</Title>}
         options={options}
         value={value}
         onChange={onChange}
@@ -49,7 +60,7 @@ const Home: NextPage<Props> = ({ data }) => {
         onClick={onClear}
       />
       <Description value={value} />
-      <List options={options} value={value} onClick={onChange} />
+      <List options={data} value={value} onClick={onChange} />
     </Layout>
   );
 };

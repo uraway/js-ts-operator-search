@@ -1,16 +1,19 @@
 import React from "react";
-import { Card, RenderIf } from "react-rainbow-components";
+import { Card } from "react-rainbow-components";
 import styled from "styled-components";
 import { Data } from "../types/data";
 import { NextComponentType, NextPageContext } from "next";
+import { CSSTransition } from "react-transition-group";
 
 type Props = {
   value?: Data;
 };
 
 const Wrapper = styled.div`
-  transition: all 300ms ease;
-  margin: 30px 0;
+  margin-top: 40px;
+  transition: opacity 600ms ease-in-out;
+  opacity: ${({ state }) => (state === "entered" ? 1 : 0)};
+  display: ${({ state }) => (state === "exited" ? "none" : "block")};
 `;
 
 const Content = styled.div`
@@ -28,22 +31,24 @@ export const Description: NextComponentType<
   Props
 > = ({ value }) => {
   return (
-    <RenderIf isTrue={!!value}>
-      <Wrapper>
-        <Card
-          title={value?.description}
-          footer={
-            <div>
-              <Link target="_blank" rel="noreferrer" href={value?.link}>
-                MDN
-              </Link>
-              でもっと詳しく
-            </div>
-          }
-        >
-          <Content>{value?.definition}</Content>
-        </Card>
-      </Wrapper>
-    </RenderIf>
+    <CSSTransition in={!!value}>
+      {(state) => (
+        <Wrapper state={state}>
+          <Card
+            title={value?.description}
+            footer={
+              <div>
+                <Link target="_blank" rel="noreferrer" href={value?.link}>
+                  MDN
+                </Link>
+                でもっと詳しく
+              </div>
+            }
+          >
+            <Content>{value?.definition}</Content>
+          </Card>
+        </Wrapper>
+      )}
+    </CSSTransition>
   );
 };
