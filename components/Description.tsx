@@ -31,7 +31,7 @@ export const Description: NextComponentType<
   Props
 > = ({ value }) => {
   return (
-    <CSSTransition in={!!value}>
+    <CSSTransition in={!!value} timeout={300}>
       {(state) => (
         <Wrapper state={state}>
           <Card
