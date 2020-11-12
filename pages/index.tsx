@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Title = styled.h1`
-  margin-top: 20px;
+  margin-top: 100px;
   transition: all 350ms ease;
   font-size: 25px;
   line-height: 1em;

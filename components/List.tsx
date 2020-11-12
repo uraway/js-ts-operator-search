@@ -1,6 +1,6 @@
 import { NextComponentType, NextPageContext } from "next";
 import React from "react";
-import { Button } from "react-rainbow-components";
+import { Button, RenderIf } from "react-rainbow-components";
 import styled from "styled-components";
 import { Data } from "../types/data";
 
@@ -20,18 +20,20 @@ export const List: NextComponentType<
   NextPageContext,
   unknown,
   Props
-> = React.memo(({ options, onClick }) => {
+> = React.memo(({ value, options, onClick }) => {
   return (
-    <Container>
-      {options.map((option) => (
-        <Button
-          variant="brand"
-          key={option.label}
-          label={option.label}
-          onClick={() => onClick(option)}
-        />
-      ))}
-    </Container>
+    <RenderIf isTrue={!value}>
+      <Container>
+        {options.map((option) => (
+          <Button
+            variant="brand"
+            key={option.label}
+            label={option.label}
+            onClick={() => onClick(option)}
+          />
+        ))}
+      </Container>
+    </RenderIf>
   );
 });
 

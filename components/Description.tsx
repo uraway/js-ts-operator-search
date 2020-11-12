@@ -1,23 +1,22 @@
 import React from "react";
-import { Card } from "react-rainbow-components";
+import { Card, RenderIf } from "react-rainbow-components";
 import styled from "styled-components";
 import { Data } from "../types/data";
 import { NextComponentType, NextPageContext } from "next";
-import { CSSTransition } from "react-transition-group";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 type Props = {
   value?: Data;
 };
 
 const Wrapper = styled.div`
-  margin-top: 40px;
-  transition: opacity 600ms ease-in-out;
-  opacity: ${({ state }) => (state === "entered" ? 1 : 0)};
-  display: ${({ state }) => (state === "exited" ? "none" : "block")};
+  margin-top: 100px;
 `;
 
 const Content = styled.div`
-  display: flex;
   padding: 3rem;
 `;
 
@@ -31,24 +30,39 @@ export const Description: NextComponentType<
   Props
 > = ({ value }) => {
   return (
-    <CSSTransition in={!!value} timeout={300}>
-      {(state) => (
-        <Wrapper state={state}>
-          <Card
-            title={value?.description}
-            footer={
-              <div>
-                <Link target="_blank" rel="noreferrer" href={value?.link}>
-                  MDN
-                </Link>
-                でもっと詳しく
-              </div>
-            }
-          >
-            <Content>{value?.definition}</Content>
-          </Card>
-        </Wrapper>
-      )}
-    </CSSTransition>
+    <RenderIf isTrue={value}>
+      <Wrapper>
+        <Card
+          title={value?.description}
+          footer={
+            <div>
+              <Link target="_blank" rel="noreferrer" href={value?.link}>
+                MDN
+              </Link>
+              でもっと詳しく
+            </div>
+          }
+        >
+          <Content>
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line react/display-name
+                code: ({ language, value }) => {
+                  return (
+                    <SyntaxHighlighter style={a11yDark} language={language}>
+                      {value}
+                    </SyntaxHighlighter>
+                  );
+                },
+              }}
+              escapeHtml={false}
+              plugins={[gfm]}
+            >
+              {value?.definition}
+            </ReactMarkdown>
+          </Content>
+        </Card>
+      </Wrapper>
+    </RenderIf>
   );
 };

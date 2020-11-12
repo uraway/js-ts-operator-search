@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { NextComponentType, NextPageContext } from "next";
 
-const gitUrl = "https://github.com/uraway/js-ts-operant-search/";
+const gitUrl = "https://github.com/uraway/js-ts-operator-search/";
 
 export const Wrapper = styled.div`
   width: 100%;
