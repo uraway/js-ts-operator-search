@@ -1,5 +1,5 @@
 {
-  "name": "js-ts-operant-search",
+  "name": "js-ts-operator-search",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,8 +16,11 @@
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-markdown": "^5.0.2",
     "react-rainbow-components": "^1.18.1",
+    "react-syntax-highlighter": "^15.3.0",
     "react-transition-group": "^4.4.1",
+    "remark-gfm": "^1.0.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
