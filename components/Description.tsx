@@ -3,18 +3,20 @@ import { Card, RenderIf } from "react-rainbow-components";
 import styled from "styled-components";
 import { Data } from "../types/data";
 import { NextComponentType, NextPageContext } from "next";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 type Props = {
   value?: Data;
 };
 
 const Wrapper = styled.div`
-  transition: all 300ms ease;
-  margin: 30px 0;
+  margin-top: 50px;
 `;
 
 const Content = styled.div`
-  display: flex;
   padding: 3rem;
 `;
 
@@ -28,7 +30,7 @@ export const Description: NextComponentType<
   Props
 > = ({ value }) => {
   return (
-    <RenderIf isTrue={!!value}>
+    <RenderIf isTrue={value}>
       <Wrapper>
         <Card
           title={value?.description}
@@ -41,7 +43,24 @@ export const Description: NextComponentType<
             </div>
           }
         >
-          <Content>{value?.definition}</Content>
+          <Content>
+            <ReactMarkdown
+              renderers={{
+                // eslint-disable-next-line react/display-name
+                code: ({ language, value }) => {
+                  return (
+                    <SyntaxHighlighter style={a11yDark} language={language}>
+                      {value}
+                    </SyntaxHighlighter>
+                  );
+                },
+              }}
+              escapeHtml={false}
+              plugins={[gfm]}
+            >
+              {value?.definition}
+            </ReactMarkdown>
+          </Content>
         </Card>
       </Wrapper>
     </RenderIf>

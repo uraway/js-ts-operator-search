@@ -14,7 +14,6 @@ class MyDocument extends Document {
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
-
     return initialProps;
   }
 
@@ -22,11 +21,6 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <Head>
-            <title>JS/TS 演算子検索</title>
-            <link rel="icon" href="/favicon.ico" />
-          </Head>
-          <meta charSet="utf-8" />
           <style>{rainbowLegacyStyles}</style>
         </Head>
         <body>

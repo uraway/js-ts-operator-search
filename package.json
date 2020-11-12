@@ -1,5 +1,5 @@
 {
-  "name": "js-ts-operant-search",
+  "name": "js-ts-operator-search",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,24 @@
     "lint": "eslint --ext .js,.ts,.jsx,.tsx ./"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "isomorphic-fetch": "^3.0.0",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-rainbow-components": "^1.18.1"
+    "react-markdown": "^5.0.2",
+    "react-rainbow-components": "^1.18.1",
+    "react-syntax-highlighter": "^15.3.0",
+    "react-transition-group": "^4.4.1",
+    "remark-gfm": "^1.0.0",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.6",
     "@types/react": "^16.9.56",
+    "@types/react-transition-group": "^4.4.0",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "eslint": "^7.13.0",
@@ -27,7 +36,6 @@
     "next-fonts": "^1.4.0",
     "next-transpile-modules": "^4.1.0",
     "prettier": "^2.1.2",
-    "styled-components": "^5.2.1",
     "typescript": "^4.0.5"
   }
 }
