@@ -6,14 +6,14 @@ import { NextComponentType, NextPageContext } from "next";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 type Props = {
   value?: Data;
 };
 
 const Wrapper = styled.div`
-  margin-top: 100px;
+  margin-top: 50px;
 `;
 
 const Content = styled.div`
