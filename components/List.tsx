@@ -2,7 +2,7 @@ import { NextComponentType, NextPageContext } from "next";
 import React from "react";
 import { Button, RenderIf } from "react-rainbow-components";
 import styled from "styled-components";
-import { Data } from "../pages/types/data";
+import { Data } from "../types/data";
 
 type Props = {
   value: Data;

@@ -1,4 +1,4 @@
-import { Context } from "../pages/api/type";
+import { Context } from "../types/api/type";
 
 const CONTEXT_REG_EXP = /^<!--\nlabel: ([\s\S]*?)\ndescription: ([\s\S]*?)\nlink: ([\s\S]*?)-->/;
 

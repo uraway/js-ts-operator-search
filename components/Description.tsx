@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, RenderIf } from "react-rainbow-components";
 import styled from "styled-components";
-import { Data } from "../pages/types/data";
+import { Data } from "../types/data";
 import { NextComponentType, NextPageContext } from "next";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
