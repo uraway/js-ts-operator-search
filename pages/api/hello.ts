@@ -2,40 +2,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
-import getConfig from "next/config";
+import { parseContext } from "../../utils/parseContext";
 
-const { serverRuntimeConfig } = getConfig();
-
-const basePath = path.join(
-  serverRuntimeConfig.PROJECT_ROOT,
-  "pages",
-  "api",
-  "markdown"
-);
-
-const contextCommentRegExp = /^<!--\nlabel: ([\s\S]*?)\ndescription: ([\s\S]*?)\nlink: ([\s\S]*?)-->/;
-type Context = {
-  label: string;
-  description: string;
-  link: string;
-};
+const dirPath = path.resolve("./public", "markdown");
 
 export default (req: NextApiRequest, res: NextApiResponse): void => {
   res.statusCode = 200;
 
-  const data = fs.readdirSync(basePath).map((filename) => {
+  const data = fs.readdirSync(dirPath).map((filename) => {
     console.log(`Reading file: ${filename}`);
-    const content = fs
-      .readFileSync(
-        path.join(
-          serverRuntimeConfig.PROJECT_ROOT,
-          "pages",
-          "api",
-          "markdown",
-          filename
-        )
-      )
-      .toString();
+    const content = fs.readFileSync(path.resolve(dirPath, filename)).toString();
     const { label, description, link } = parseContext(content);
     return {
       label,
@@ -47,15 +23,3 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
 
   res.json({ data });
 };
-
-function parseContext(content: string): null | Context {
-  const comment = content.match(contextCommentRegExp);
-  if (comment) {
-    return {
-      label: comment[1],
-      description: comment[2],
-      link: comment[3],
-    };
-  }
-  return null;
-}
