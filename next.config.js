@@ -9,8 +9,5 @@ module.exports = withTM(
     webpack(config, options) {
       return config;
     },
-    serverRuntimeConfig: {
-      PROJECT_ROOT: __dirname,
-    },
   })
 );
