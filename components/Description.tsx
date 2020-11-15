@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 3rem;
+  padding: 2rem;
 `;
 
 const Link = styled.a`

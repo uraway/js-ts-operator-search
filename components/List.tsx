@@ -12,8 +12,11 @@ type Props = {
 
 const Container = styled.div`
   margin-top: 40px;
-  display: flex;
-  justify-content: space-evenly;
+`;
+
+const StyledButton = styled(Button)`
+  min-width: 20px;
+  margin: 2px;
 `;
 
 export const List: NextComponentType<
@@ -23,11 +26,10 @@ export const List: NextComponentType<
 > = React.memo(({ value, options, onClick }) => {
   return (
     <RenderIf isTrue={!value}>
-      <Container>
+      <Container className="rainbow-p-vertical_large rainbow-align-content_center rainbow-flex_wrap">
         {options.map((option) => (
-          <Button
-            variant="brand"
-            key={option.label}
+          <StyledButton
+            key={option.description.toString()}
             label={option.label}
             onClick={() => onClick(option)}
           />
