@@ -56,7 +56,6 @@ const Home: NextPage<Props> = ({ data }) => {
       <Transition in={!!value} timeout={500}>
         {(state) => (
           <Lookup
-            id="lookup-1"
             label={
               <Title state={state}>JavaScript/TypeScript 演算子検索</Title>
             }
@@ -68,7 +67,6 @@ const Home: NextPage<Props> = ({ data }) => {
           />
         )}
       </Transition>
-
       <Description value={value} />
       <List options={data} value={value} onClick={onChange} />
     </Layout>

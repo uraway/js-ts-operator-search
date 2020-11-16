@@ -2,9 +2,6 @@ import React from "react";
 import type { AppProps /*, AppContext */ } from "next/app";
 import "../styles/globals.css";
 import Head from "next/head";
-import { ThemeProvider } from "styled-components";
-import normalizeTheme from "react-rainbow-components/styles/helpers/normalizeTheme";
-import theme from "react-rainbow-components/styles/defaultTheme";
 
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
   return (
@@ -14,9 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
       </Head>
-      <ThemeProvider theme={normalizeTheme(theme)}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Component {...pageProps} />
     </>
   );
 };

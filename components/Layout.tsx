@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "./";
 import { NextComponentType, NextPageContext } from "next";
 import styled from "styled-components";
+import { Application } from "react-rainbow-components";
 
 export const MainWrapper = styled.main`
   position: relative;
@@ -20,9 +21,13 @@ export const ChildrenWrapper = styled.main`
 
 export const Layout: NextComponentType<NextPageContext, unknown, unknown> = ({
   children,
-}) => (
-  <MainWrapper>
-    <Header />
-    <ChildrenWrapper>{children}</ChildrenWrapper>
-  </MainWrapper>
-);
+}) => {
+  return (
+    <Application>
+      <MainWrapper>
+        <Header />
+        <ChildrenWrapper>{children}</ChildrenWrapper>
+      </MainWrapper>
+    </Application>
+  );
+};
