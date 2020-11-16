@@ -6,13 +6,15 @@ import { Description, Layout, List } from "../components";
 import { Data } from "../types/data";
 import { getAbsoluteUrl } from "../utils";
 import styled from "styled-components";
+import { Transition } from "react-transition-group";
 
 type Props = {
   data: Data[];
 };
 
 const Title = styled.h1`
-  margin-top: 100px;
+  margin-top: ${({ state }) =>
+    state === "entering" || state === "entered" ? 20 : 150}px;
   transition: all 350ms ease;
   font-size: 25px;
   line-height: 1em;
@@ -51,15 +53,20 @@ const Home: NextPage<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <Lookup
-        id="lookup-1"
-        label={<Title>JavaScript/TypeScript 演算子検索</Title>}
-        options={options}
-        value={value}
-        onChange={onChange}
-        onSearch={onSearch}
-        onClick={onClear}
-      />
+      <Transition in={!!value} timeout={500}>
+        {(state) => (
+          <Lookup
+            label={
+              <Title state={state}>JavaScript/TypeScript 演算子検索</Title>
+            }
+            options={options}
+            value={value}
+            onChange={onChange}
+            onSearch={onSearch}
+            onClick={onClear}
+          />
+        )}
+      </Transition>
       <Description value={value} />
       <List options={data} value={value} onClick={onChange} />
     </Layout>

@@ -1,7 +1,7 @@
 <!--
 label: >=
-description: 大なりイコール演算子です。
-link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Less_than
+description: 大なりイコール演算子
+link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Greater_than_or_equal
 -->
 
 左辺が右辺より大きいか等しいかをチェックします。

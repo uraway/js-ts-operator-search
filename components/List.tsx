@@ -1,8 +1,9 @@
 import { NextComponentType, NextPageContext } from "next";
 import React from "react";
-import { Button, RenderIf } from "react-rainbow-components";
+import { Button } from "react-rainbow-components";
 import styled from "styled-components";
 import { Data } from "../types/data";
+import { Transition } from "react-transition-group";
 
 type Props = {
   value: Data;
@@ -12,8 +13,12 @@ type Props = {
 
 const Container = styled.div`
   margin-top: 40px;
-  display: flex;
-  justify-content: space-evenly;
+`;
+
+const StyledButton = styled(Button)`
+  min-width: 20px;
+  margin: 2px;
+  opacity: ${({ state }) => (state === "exited" ? 1 : 0)};
 `;
 
 export const List: NextComponentType<
@@ -22,18 +27,23 @@ export const List: NextComponentType<
   Props
 > = React.memo(({ value, options, onClick }) => {
   return (
-    <RenderIf isTrue={!value}>
-      <Container>
-        {options.map((option) => (
-          <Button
-            variant="brand"
-            key={option.label}
-            label={option.label}
-            onClick={() => onClick(option)}
-          />
-        ))}
-      </Container>
-    </RenderIf>
+    <Container className="rainbow-p-vertical_large rainbow-align-content_center rainbow-flex_wrap">
+      {options.map((option, index) => (
+        <Transition
+          key={option.description.toString()}
+          in={!!value}
+          timeout={20 * index}
+        >
+          {(state) => (
+            <StyledButton
+              state={state}
+              label={option.label}
+              onClick={() => onClick(option)}
+            />
+          )}
+        </Transition>
+      ))}
+    </Container>
   );
 });
 
