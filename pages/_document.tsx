@@ -7,7 +7,6 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from "next/document";
-import rainbowLegacyStyles from "react-rainbow-components/components/Application/rainbowLegacyStyles";
 import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
