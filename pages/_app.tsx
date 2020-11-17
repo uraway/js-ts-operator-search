@@ -8,8 +8,6 @@ const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
     <>
       <Head>
         <title>JavaScript/TypeScript 演算子検索</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta charSet="utf-8" />
       </Head>
       <Component {...pageProps} />
     </>

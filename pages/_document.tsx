@@ -43,7 +43,8 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <style>{rainbowLegacyStyles}</style>
+          <link rel="icon" href="/favicon.ico" />
+          <meta charSet="utf-8" />
         </Head>
         <body>
           <Main />
