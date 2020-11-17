@@ -16,5 +16,5 @@ JavaScriptでは、オペランドは符号付き32ビットの整数値に変�
 ```typescript
 let x = 9
 x >>= 2
-console.log(x)
+console.log(x) // 2
 ```

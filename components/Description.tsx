@@ -24,6 +24,9 @@ const Card = styled(Box)`
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+  tr {
+    white-space: nowrap;
+  }
 `;
 
 export const Description: NextComponentType<
@@ -33,7 +36,13 @@ export const Description: NextComponentType<
 > = ({ value }) => {
   if (!value) return null;
   return (
-    <Card borderRadius="12px" borderWidth="1px" p="0.75rem" mt="1.25rem">
+    <Card
+      borderRadius="12px"
+      borderWidth="1px"
+      p="0.75rem"
+      mt="1.25rem"
+      overflowX="scroll"
+    >
       <Heading size="md" p="0.25rem">
         {value?.description}
       </Heading>
