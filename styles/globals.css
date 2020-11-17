@@ -12,15 +12,6 @@ body {
   height: 100%;
 }
 
-p, table {
-  margin-bottom: 1rem;
-}
-
-pre {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 a {
   color: inherit;
   text-decoration: none;

@@ -2,6 +2,7 @@ import React from "react";
 import type { AppProps /*, AppContext */ } from "next/app";
 import "../styles/globals.css";
 import Head from "next/head";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
   return (
@@ -9,7 +10,9 @@ const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
       <Head>
         <title>JavaScript/TypeScript 演算子検索</title>
       </Head>
-      <Component {...pageProps} />
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 };

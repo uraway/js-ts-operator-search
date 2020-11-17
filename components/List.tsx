@@ -1,9 +1,9 @@
 import { NextComponentType, NextPageContext } from "next";
 import React from "react";
-import { Button } from "react-rainbow-components";
 import styled from "styled-components";
 import { Data } from "../types/data";
 import { Transition } from "react-transition-group";
+import { Button } from "@chakra-ui/react";
 
 type Props = {
   value: Data;
@@ -35,11 +35,9 @@ export const List: NextComponentType<
           timeout={20 * index}
         >
           {(state) => (
-            <StyledButton
-              state={state}
-              label={option.label}
-              onClick={() => onClick(option)}
-            />
+            <StyledButton state={state} onClick={() => onClick(option)}>
+              {option.label}
+            </StyledButton>
           )}
         </Transition>
       ))}

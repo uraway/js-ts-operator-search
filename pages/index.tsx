@@ -7,19 +7,18 @@ import { Data } from "../types/data";
 import { getAbsoluteUrl } from "../utils";
 import styled from "styled-components";
 import { Transition } from "react-transition-group";
+import { Heading } from "@chakra-ui/react";
 
 type Props = {
   data: Data[];
 };
 
-const Title = styled.h1`
+const Title = styled(Heading)`
   margin-top: ${({ state }) =>
-    state === "entering" || state === "entered" ? 20 : 150}px;
+    state === "entering" || state === "entered" ? 50 : 150}px;
   transition: all 350ms ease;
-  font-size: 25px;
-  line-height: 1em;
-  font-weight: 400;
   margin-bottom: 29px;
+  text-align: center;
 `;
 
 const Home: NextPage<Props> = ({ data }) => {
@@ -55,16 +54,18 @@ const Home: NextPage<Props> = ({ data }) => {
     <Layout>
       <Transition in={!!value} timeout={500}>
         {(state) => (
-          <Lookup
-            label={
-              <Title state={state}>JavaScript/TypeScript 演算子検索</Title>
-            }
-            options={options}
-            value={value}
-            onChange={onChange}
-            onSearch={onSearch}
-            onClick={onClear}
-          />
+          <>
+            <Title size="lg" state={state}>
+              JavaScript/TypeScript 演算子検索
+            </Title>
+            <Lookup
+              options={options}
+              value={value}
+              onChange={onChange}
+              onSearch={onSearch}
+              onClick={onClear}
+            />
+          </>
         )}
       </Transition>
       <Description value={value} />
