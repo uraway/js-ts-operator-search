@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonIcon } from "react-rainbow-components";
+import { Box, IconButton } from "@chakra-ui/react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -9,13 +9,8 @@ import { useColorMode } from "@chakra-ui/react";
 
 const gitUrl = "https://github.com/uraway/js-ts-operator-search/";
 
-export const Wrapper = styled.div`
-  width: 100%;
-  text-align: end;
-`;
-
-export const TopAction = styled.a`
-  margin-left: auto;
+const TopAction = styled.a`
+  margin: 0.25rem;
 `;
 
 export const Header: NextComponentType<
@@ -26,17 +21,22 @@ export const Header: NextComponentType<
   const { colorMode, toggleColorMode } = useColorMode();
   const switchIcon = colorMode === "light" ? faMoon : faSun;
   return (
-    <Wrapper>
+    <Box w="100%" textAlign="end">
       <TopAction>
-        <ButtonIcon
+        <IconButton
+          aria-label="switch theme"
           onClick={toggleColorMode}
-          size="large"
+          size="lg"
           icon={<FontAwesomeIcon icon={switchIcon} />}
         />
       </TopAction>
       <TopAction href={gitUrl} target="_blank">
-        <ButtonIcon size="large" icon={<FontAwesomeIcon icon={faGithub} />} />
+        <IconButton
+          aria-label="github link"
+          size="lg"
+          icon={<FontAwesomeIcon icon={faGithub} />}
+        />
       </TopAction>
-    </Wrapper>
+    </Box>
   );
 };
