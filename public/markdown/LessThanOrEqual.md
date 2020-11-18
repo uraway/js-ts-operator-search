@@ -1,8 +1,8 @@
-<!--
+---
 label: <=
 description: 小なりイコール演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Less_than_or_equal
--->
+---
 
 左辺が右辺より小さいまたは等しいかをチェックします。
 

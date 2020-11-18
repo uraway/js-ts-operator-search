@@ -1,8 +1,8 @@
-<!--
+---
 label: *
 description: 乗算演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Multiplication
--->
+---
 
 掛け算した結果を返します。`×`(乗算記号)のことです。
 

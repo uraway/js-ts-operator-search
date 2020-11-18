@@ -1,8 +1,8 @@
-<!--
+---
 label: +
 description: 加算演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Addition
--->
+---
 
 数値や文字列を合計します。
 

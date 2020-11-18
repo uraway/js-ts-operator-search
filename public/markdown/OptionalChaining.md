@@ -1,8 +1,8 @@
-<!--
+---
 label: ?.
 description: オプショナルチェイニング演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Optional_chaining
--->
+---
 
 オブジェクトのプロパティにアクセスする際、プロパティがnullまたはundefinedであってもエラーにならず、undefinedを返します。
 関数の呼び出しで使用すると、関数が存在しない場合にもエラーにならず、undefinedを返します。

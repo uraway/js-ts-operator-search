@@ -1,8 +1,8 @@
-<!--
+---
 label: &=
 description: ビット論理積代入演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_AND_assignment
--->
+---
 
 代入演算子のビット論理積版です。ビット論理積の結果を変数に代入します。
 

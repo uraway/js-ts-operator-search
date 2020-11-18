@@ -1,8 +1,8 @@
-<!--
+---
 label: >>>
 description: 符号なし右シフト演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift
--->
+---
 
 左のオペランドを、右のオペランド分だけ右にずらし、符号なし32ビットを返します。
 

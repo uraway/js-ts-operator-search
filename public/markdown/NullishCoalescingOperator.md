@@ -1,8 +1,8 @@
-<!--
+---
 label: ??
 description: Null合体演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
--->
+---
 
 左のオペランドがnullまたはundefinedの場合に、右のオペランドを返し、それ以外は左のオペランドを返します。
 

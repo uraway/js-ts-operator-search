@@ -1,8 +1,8 @@
-<!--
+---
 label: ~
 description: ビット否定演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_NOT
--->
+---
 
 オペランドのビットを反転し、10進数で返します。JavaScriptでは、オペランドは符号付き32ビットの整数値に変換されます。
 

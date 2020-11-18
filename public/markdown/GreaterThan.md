@@ -1,8 +1,8 @@
-<!--
+---
 label: >
 description: 大なり演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Greater_than
--->
+---
 
 左辺が右辺より大きいかをチェックします。
 

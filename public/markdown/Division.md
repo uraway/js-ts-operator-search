@@ -1,8 +1,8 @@
-<!--
+---
 label: /
 description: 除算演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Division
--->
+---
 
 割り算した結果を返します。`÷`(除算記号)のことです。
 

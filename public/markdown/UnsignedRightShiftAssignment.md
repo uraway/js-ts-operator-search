@@ -1,8 +1,8 @@
-<!--
+---
 label: >>>=
 description: 符号なし右シフト代入演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift_assignment
--->
+---
 
 代入演算子の符号なし右シフト版です。符号なし右シフトの結果を変数に代入します。
 

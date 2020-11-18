@@ -1,8 +1,8 @@
-<!--
+---
 label: ^=
 description: ビット排他的論理和代入演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR_assignment
--->
+---
 
 代入演算子のビット排他的論理和版です。ビット排他的論理和の結果を変数に代入します。
 

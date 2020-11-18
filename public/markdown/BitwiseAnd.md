@@ -1,8 +1,8 @@
-<!--
+---
 label: &
 description: ビット論理積演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_AND
--->
+---
 
 両方のオペランドに対応するビットの論理積(互いにビットが1である位置のビット)を10進数で返します。
 

@@ -1,8 +1,8 @@
-<!--
+---
 label: +=
 description: 加算代入演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Addition_assignment
--->
+---
 
 値と変数を加算し、結果を変数に代入します。
 

@@ -1,8 +1,8 @@
-<!--
+---
 label: <<
 description: 左シフト演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Left_shift
--->
+---
 
 左のオペランドを、右のオペランド分だけ左にずらします。
 
