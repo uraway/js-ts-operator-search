@@ -1,8 +1,8 @@
-<!--
+---
 label: >>=
 description: 右シフト代入演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Right_shift_assignment
--->
+---
 
 代入演算子の右シフト版です。右シフトの結果を変数に代入します。
 

@@ -1,8 +1,8 @@
-<!--
+---
 label: ...
 description: スプレッド構文
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Spread_syntax
--->
+---
 
 分割代入構文と似ていますが、逆の働きで、オブジェクトや配列などを展開します。クローン、マージなどに利用可能です。
 

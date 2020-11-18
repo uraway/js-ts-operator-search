@@ -1,8 +1,8 @@
-<!--
+---
 label: ?
 description: 三項演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
--->
+---
 
 `(条件) ? (条件が真の場合に実行する式) : (条件が偽の場合に実行する式)`のかたちで、`if/else`の糖衣構文としてよく用いられます。
 

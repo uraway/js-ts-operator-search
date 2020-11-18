@@ -1,8 +1,8 @@
-<!--
+---
 label: |=
 description: ビット論理和代入演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_OR_assignment
--->
+---
 
 代入演算子のビット論理和版です。ビット論理和の結果を変数に代入します。
 

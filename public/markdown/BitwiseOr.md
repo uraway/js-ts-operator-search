@@ -1,8 +1,8 @@
-<!--
+---
 label: |
 description: ビット論理和演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_OR
--->
+---
 
 両方のオペランドに対応するビットの論理和(どちらか一方のビットが1である位置のビット)を10進数で返します。
 JavaScriptでは、オペランドは符号付き32ビットの整数値に変換されます。例えば2進数の9と14のビット論理和は次のようになります。

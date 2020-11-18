@@ -1,8 +1,8 @@
-<!--
+---
 label: ,
 description: カンマ演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Comma_Operator
--->
+---
 
 一列の演算をつなぎ合わせ、最後のオペランドの値を返します。
 

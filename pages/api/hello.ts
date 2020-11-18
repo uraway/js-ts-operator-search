@@ -12,12 +12,12 @@ export default (req: NextApiRequest, res: NextApiResponse): void => {
   const data = fs.readdirSync(dirPath).map((filename) => {
     console.log(`Reading file: ${filename}`);
     const content = fs.readFileSync(path.resolve(dirPath, filename)).toString();
-    const { label, description, link } = parseContext(content);
+    const { label, description, link, definition } = parseContext(content);
     return {
       label,
       description,
       link,
-      definition: content,
+      definition,
     };
   });
 

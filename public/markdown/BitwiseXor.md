@@ -1,8 +1,8 @@
-<!--
+---
 label: ^
 description: ビット排他的論理和演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_XOR
--->
+---
 
 両方のオペランドに対応するビットの排他的論理和(どちらか一方だけが1である位置のビット)を10進数で返します。
 
