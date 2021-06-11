@@ -35,7 +35,11 @@ export const List: NextComponentType<
           timeout={20 * index}
         >
           {(state) => (
-            <StyledButton state={state} onClick={() => onClick(option)}>
+            <StyledButton
+              state={state}
+              onClick={() => onClick(option)}
+              data-cy="option-item"
+            >
               {option.label}
             </StyledButton>
           )}

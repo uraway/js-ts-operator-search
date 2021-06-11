@@ -7,9 +7,9 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/L
 左辺が右辺より小さいかどうかチェックします。
 
 ```typescript
-console.log(2 < 4) // true
-console.log(1.5 < -1) // false
-console.log(100 < 100) // false
-console.log('a' < 'b'); // true
-console.log('い' < 'あ'); // false
+console.log(2 < 4); // true
+console.log(1.5 < -1); // false
+console.log(100 < 100); // false
+console.log("a" < "b"); // true
+console.log("い" < "あ"); // false
 ```

@@ -43,10 +43,10 @@ export const Description: NextComponentType<
       mt="1.25rem"
       overflowX="scroll"
     >
-      <Heading size="md" p="0.25rem">
+      <Heading size="md" p="0.25rem" data-cy="heading">
         {value?.description}
       </Heading>
-      <Box p="1.2rem" fontSize="14px">
+      <Box p="1.2rem" fontSize="14px" data-cy="description">
         <ReactMarkdown
           renderers={{
             // eslint-disable-next-line react/display-name
