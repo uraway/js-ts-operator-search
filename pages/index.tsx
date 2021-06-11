@@ -14,13 +14,9 @@ type Props = {
   data: Data[];
 };
 
-// @ts-expect-error: skip ts check
-const Title = styled(Heading)`
+const Spacer = styled.div`
   margin-top: ${({ state }: { state: TransitionStatus }) =>
     state === "entering" || state === "entered" ? 50 : 150}px;
-  transition: all 350ms ease;
-  margin-bottom: 29px;
-  text-align: center;
 `;
 
 const filter = (query: string, os: Data[]) => {
@@ -62,9 +58,17 @@ const Home: NextPage<Props> = ({ data }) => {
       <Transition in={!!value} timeout={500}>
         {(state) => (
           <>
-            <Title size="lg" state={state}>
+            <Spacer state={state} />
+            <Heading
+              size="lg"
+              style={{
+                transition: "all 350ms ease;",
+                marginBottom: "29px",
+                textAlign: "center",
+              }}
+            >
               JavaScript/TypeScript 演算子検索
-            </Title>
+            </Heading>
             <Lookup
               id="lookup"
               options={options}

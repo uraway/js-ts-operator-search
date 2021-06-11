@@ -15,12 +15,6 @@ const Container = styled.div`
   margin-top: 40px;
 `;
 
-const StyledButton = styled(Button)`
-  min-width: 20px;
-  margin: 2px;
-  opacity: ${({ state }) => (state === "exited" ? 1 : 0)};
-`;
-
 export const List: NextComponentType<
   NextPageContext,
   unknown,
@@ -35,13 +29,17 @@ export const List: NextComponentType<
           timeout={20 * index}
         >
           {(state) => (
-            <StyledButton
-              state={state}
+            <Button
+              style={{
+                minWidth: "20px",
+                margin: "2px",
+                opacity: state === "exited" ? 1 : 0,
+              }}
               onClick={() => onClick(option)}
               data-cy="option-item"
             >
               {option.label}
-            </StyledButton>
+            </Button>
           )}
         </Transition>
       ))}
