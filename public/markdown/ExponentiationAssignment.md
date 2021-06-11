@@ -7,7 +7,7 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/E
 左のオペランドを、右のオペランド回数かけ合わせた結果を変数に代入します。
 
 ```typescript
-let x = 4
-console.log(x **= 2) // 16
-console.log(x **= 3) // 4096
+let x = 4;
+console.log((x **= 2)); // 16
+console.log((x **= 3)); // 4096
 ```

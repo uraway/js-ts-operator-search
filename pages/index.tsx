@@ -1,53 +1,56 @@
-import React from "react";
+import { Data } from "../types/data";
+import { Description, Layout, List } from "../components";
+import { getAbsoluteUrl } from "../utils";
+import { Heading } from "@chakra-ui/react";
 import { Lookup } from "react-rainbow-components";
 import { NextPage } from "next";
-import fetch from "isomorphic-fetch";
-import { Description, Layout, List } from "../components";
-import { Data } from "../types/data";
-import { getAbsoluteUrl } from "../utils";
-import styled from "styled-components";
 import { Transition } from "react-transition-group";
-import { Heading } from "@chakra-ui/react";
+import fetch from "isomorphic-fetch";
+import React, { useCallback, useState } from "react";
+import styled from "styled-components";
+import { TransitionStatus } from "react-transition-group/Transition";
 
 type Props = {
   data: Data[];
 };
 
-const Title = styled(Heading)`
-  margin-top: ${({ state }) =>
+const Spacer = styled.div`
+  margin-top: ${({ state }: { state: TransitionStatus }) =>
     state === "entering" || state === "entered" ? 50 : 150}px;
-  transition: all 350ms ease;
-  margin-bottom: 29px;
-  text-align: center;
 `;
 
+const filter = (query: string, os: Data[]) => {
+  if (query) {
+    return os.filter((item) => item.label.includes(query));
+  }
+  return [];
+};
+
 const Home: NextPage<Props> = ({ data }) => {
-  const [value, setValue] = React.useState<Data | undefined>();
-  const [options, setOptions] = React.useState<Data[]>(null);
+  const [value, setValue] = useState<Data | undefined>();
+  const [inputValue, setInputValue] = useState("");
+  const [options, setOptions] = useState<Data[] | null>(null);
 
-  const filter = (query: string, options: Data[]) => {
-    if (query) {
-      return options.filter((item) => item.label.includes(query));
-    }
-    return [];
-  };
-
-  const onSearch = (inputValue: string) => {
-    if (options && inputValue) {
-      setOptions(filter(inputValue, options));
-    } else if (inputValue) {
-      setOptions(filter(inputValue, data));
+  const onSearch = (newInputValue: string) => {
+    if (!!options && newInputValue?.length > inputValue?.length) {
+      setInputValue(newInputValue);
+      setOptions(filter(newInputValue, options));
+    } else if (newInputValue) {
+      setInputValue(newInputValue);
+      setOptions(filter(newInputValue, data));
     } else {
+      setInputValue(inputValue);
       setOptions(null);
     }
   };
 
-  const onChange = React.useCallback((value: Data) => {
+  const onChange = useCallback((value: Data) => {
     setValue(value);
   }, []);
 
   const onClear = () => {
     setValue(undefined);
+    setOptions(null);
   };
 
   return (
@@ -55,10 +58,19 @@ const Home: NextPage<Props> = ({ data }) => {
       <Transition in={!!value} timeout={500}>
         {(state) => (
           <>
-            <Title size="lg" state={state}>
+            <Spacer state={state} />
+            <Heading
+              size="lg"
+              style={{
+                transition: "all 350ms ease;",
+                marginBottom: "29px",
+                textAlign: "center",
+              }}
+            >
               JavaScript/TypeScript 演算子検索
-            </Title>
+            </Heading>
             <Lookup
+              id="lookup"
               options={options}
               value={value}
               onChange={onChange}

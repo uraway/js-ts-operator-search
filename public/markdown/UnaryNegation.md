@@ -7,6 +7,6 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/U
 オペランドの符号を反転します。
 
 ```typescript
-const x = 4
-console.log(-x) // -4
+const x = 4;
+console.log(-x); // -4
 ```
