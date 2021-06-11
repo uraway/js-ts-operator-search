@@ -25,6 +25,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            '**/node_modules'
+            /home/runner/.cache/Cypress
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
       - name: Install Dependencies
         run: yarn install
       - name: Run lint
@@ -32,3 +40,5 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
+          build: yarn build
+          start: yarn start
