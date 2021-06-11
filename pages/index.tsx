@@ -1,7 +1,7 @@
 import { Data } from "../types/data";
 import { Description, Layout, List } from "../components";
 import { getAbsoluteUrl } from "../utils";
-import { Heading } from "@chakra-ui/react";
+import { Heading, SlideFade } from "@chakra-ui/react";
 import { Lookup } from "react-rainbow-components";
 import { NextPage } from "next";
 import { Transition } from "react-transition-group";
@@ -17,6 +17,7 @@ type Props = {
 const Spacer = styled.div`
   margin-top: ${({ state }: { state: TransitionStatus }) =>
     state === "entering" || state === "entered" ? 50 : 150}px;
+  transition: all 1000ms ease;
 `;
 
 const filter = (query: string, os: Data[]) => {
@@ -62,7 +63,6 @@ const Home: NextPage<Props> = ({ data }) => {
             <Heading
               size="lg"
               style={{
-                transition: "all 350ms ease;",
                 marginBottom: "29px",
                 textAlign: "center",
               }}
@@ -80,7 +80,9 @@ const Home: NextPage<Props> = ({ data }) => {
           </>
         )}
       </Transition>
-      <Description value={value} />
+      <SlideFade in={!!value} offsetY={20}>
+        <Description value={value} />
+      </SlideFade>
       <List options={data} value={value} onClick={onChange} />
     </Layout>
   );
