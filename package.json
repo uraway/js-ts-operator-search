@@ -40,7 +40,7 @@
     "@typescript-eslint/parser": "4.7.0",
     "cypress": "7.5.0",
     "eslint": "7.28.0",
-    "eslint-plugin-react": "7.21.5",
+    "eslint-plugin-react": "7.24.0",
     "next-fonts": "1.5.1",
     "next-transpile-modules": "4.1.0",
     "prettier": "2.1.2",
