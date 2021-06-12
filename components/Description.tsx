@@ -7,6 +7,10 @@ import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Box, Divider, Heading } from "@chakra-ui/react";
+import {
+  NormalComponents,
+  SpecialComponents,
+} from "react-markdown/src/ast-to-react";
 
 type Props = {
   value?: Data;
@@ -29,6 +33,24 @@ const Card = styled(Box)`
   }
 `;
 
+const components: Partial<NormalComponents & SpecialComponents> = {
+  code({ inline, className, children, ...props }) {
+    const match = /language-(\w+)/.exec(className || "");
+    return !inline && match ? (
+      <SyntaxHighlighter
+        style={a11yDark}
+        language={match[1]}
+        PreTag="div"
+        {...props}
+      >
+        {String(children).replace(/\n$/, "")}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={className} {...props} />
+    );
+  },
+};
+
 export const Description: NextComponentType<NextPageContext, unknown, Props> =
   ({ value }) => {
     if (!value) return null;
@@ -44,20 +66,7 @@ export const Description: NextComponentType<NextPageContext, unknown, Props> =
           {value?.description}
         </Heading>
         <Box p="1.2rem" fontSize="14px" data-cy="description">
-          <ReactMarkdown
-            renderers={{
-              // eslint-disable-next-line react/display-name
-              code: ({ language, value }) => {
-                return (
-                  <SyntaxHighlighter style={a11yDark} language={language}>
-                    {value}
-                  </SyntaxHighlighter>
-                );
-              },
-            }}
-            escapeHtml={false}
-            plugins={[gfm]}
-          >
+          <ReactMarkdown components={components} plugins={[gfm]} skipHtml>
             {value?.definition}
           </ReactMarkdown>
         </Box>
