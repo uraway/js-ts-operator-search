@@ -7,7 +7,10 @@ import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Box, Divider, Heading } from "@chakra-ui/react";
-import { NormalComponents, SpecialComponents } from "react-markdown/src/ast-to-react";
+import {
+  NormalComponents,
+  SpecialComponents,
+} from "react-markdown/src/ast-to-react";
 
 type Props = {
   value?: Data;
@@ -31,41 +34,49 @@ const Card = styled(Box)`
 `;
 
 const components: Partial<NormalComponents & SpecialComponents> = {
-  code({ node, inline, className, children, ...props }) {
+  code({ inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || "");
     return !inline && match ? (
       <SyntaxHighlighter
         style={a11yDark}
         language={match[1]}
         PreTag="div"
-        children={String(children).replace(/\n$/, "")}
         {...props}
-      />
+      >
+        {String(children).replace(/\n$/, "")}
+      </SyntaxHighlighter>
     ) : (
       <code className={className} {...props} />
     );
   },
 };
 
-export const Description: NextComponentType<NextPageContext, unknown, Props> = ({ value }) => {
-  if (!value) return null;
-  return (
-    <Card borderRadius="12px" borderWidth="1px" p="0.75rem" mt="1.25rem" overflowX="scroll">
-      <Heading size="md" p="0.25rem" data-cy="heading">
-        {value?.description}
-      </Heading>
-      <Box p="1.2rem" fontSize="14px" data-cy="description">
-        <ReactMarkdown components={components} plugins={[gfm]} skipHtml>
-          {value?.definition}
-        </ReactMarkdown>
-      </Box>
-      <Divider />
-      <Box pt="0.75rem" textAlign="center">
-        <Link target="_blank" rel="noreferrer" href={value?.link}>
-          MDN
-        </Link>
-        でもっと詳しく
-      </Box>
-    </Card>
-  );
-};
+export const Description: NextComponentType<NextPageContext, unknown, Props> =
+  ({ value }) => {
+    if (!value) return null;
+    return (
+      <Card
+        borderRadius="12px"
+        borderWidth="1px"
+        p="0.75rem"
+        mt="1.25rem"
+        overflowX="scroll"
+      >
+        <Heading size="md" p="0.25rem" data-cy="heading">
+          {value?.description}
+        </Heading>
+        <Box p="1.2rem" fontSize="14px" data-cy="description">
+          <ReactMarkdown components={components} plugins={[gfm]} skipHtml>
+            {value?.definition}
+          </ReactMarkdown>
+        </Box>
+        <Divider />
+        <Box pt="0.75rem" textAlign="center">
+          <Link target="_blank" rel="noreferrer" href={value?.link}>
+            MDN
+          </Link>
+          でもっと詳しく
+        </Box>
+      </Card>
+    );
+  };
