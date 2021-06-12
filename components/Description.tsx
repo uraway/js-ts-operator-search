@@ -29,48 +29,45 @@ const Card = styled(Box)`
   }
 `;
 
-export const Description: NextComponentType<
-  NextPageContext,
-  unknown,
-  Props
-> = ({ value }) => {
-  if (!value) return null;
-  return (
-    <Card
-      borderRadius="12px"
-      borderWidth="1px"
-      p="0.75rem"
-      mt="1.25rem"
-      overflowX="scroll"
-    >
-      <Heading size="md" p="0.25rem" data-cy="heading">
-        {value?.description}
-      </Heading>
-      <Box p="1.2rem" fontSize="14px" data-cy="description">
-        <ReactMarkdown
-          renderers={{
-            // eslint-disable-next-line react/display-name
-            code: ({ language, value }) => {
-              return (
-                <SyntaxHighlighter style={a11yDark} language={language}>
-                  {value}
-                </SyntaxHighlighter>
-              );
-            },
-          }}
-          escapeHtml={false}
-          plugins={[gfm]}
-        >
-          {value?.definition}
-        </ReactMarkdown>
-      </Box>
-      <Divider />
-      <Box pt="0.75rem" textAlign="center">
-        <Link target="_blank" rel="noreferrer" href={value?.link}>
-          MDN
-        </Link>
-        でもっと詳しく
-      </Box>
-    </Card>
-  );
-};
+export const Description: NextComponentType<NextPageContext, unknown, Props> =
+  ({ value }) => {
+    if (!value) return null;
+    return (
+      <Card
+        borderRadius="12px"
+        borderWidth="1px"
+        p="0.75rem"
+        mt="1.25rem"
+        overflowX="scroll"
+      >
+        <Heading size="md" p="0.25rem" data-cy="heading">
+          {value?.description}
+        </Heading>
+        <Box p="1.2rem" fontSize="14px" data-cy="description">
+          <ReactMarkdown
+            renderers={{
+              // eslint-disable-next-line react/display-name
+              code: ({ language, value }) => {
+                return (
+                  <SyntaxHighlighter style={a11yDark} language={language}>
+                    {value}
+                  </SyntaxHighlighter>
+                );
+              },
+            }}
+            escapeHtml={false}
+            plugins={[gfm]}
+          >
+            {value?.definition}
+          </ReactMarkdown>
+        </Box>
+        <Divider />
+        <Box pt="0.75rem" textAlign="center">
+          <Link target="_blank" rel="noreferrer" href={value?.link}>
+            MDN
+          </Link>
+          でもっと詳しく
+        </Box>
+      </Card>
+    );
+  };
