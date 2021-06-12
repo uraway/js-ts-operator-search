@@ -2545,6 +2545,14 @@ end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
+enhanced-resolve@^5.7.0:
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.8.2.tgz#15ddc779345cbb73e97c611cd00c01c1e7bf4d8b"
+  integrity sha512-F27oB3WuHDzvR2DOGNTaYy0D5o0cnrv8TeI482VM4kYgQd/FT9lUQwuNsJ0oOHtBUq7eiW5ytqzp7nBFknL+GA==
+  dependencies:
+    graceful-fs "^4.2.4"
+    tapable "^2.2.0"
+
 enquirer@^2.3.5:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/enquirer/-/enquirer-2.3.6.tgz#2a7fe5dd634a1e4125a975ec994ff5456dc3734d"
@@ -3207,7 +3215,7 @@ graceful-fs@^4.1.2:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-graceful-fs@^4.1.6, graceful-fs@^4.2.0:
+graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
@@ -4358,13 +4366,13 @@ next-fonts@1.5.1:
     file-loader "^6.0.0"
     url-loader "^4.0.0"
 
-next-transpile-modules@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-4.1.0.tgz#b2d4bd29f3d4179014f7615720f360fdeec67ff7"
-  integrity sha512-brb9S2Dq7l01fV0fdZw1pO2cWMu7fFTclIV2nccmX2Jzwtz1c9iScPMqGyWP6/wglOPOColoJlHzOrSG6cnEIQ==
+next-transpile-modules@7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-7.3.0.tgz#088bfc2baeff7624991d4b510558c7a9d4a82d73"
+  integrity sha512-1iIiXEL/tyqd9LS3ge8nhPLgYByaFxLSBqbaQZZBedTgFVVnULrcdGDBVqWzivkcxDIqBpdeou+FKqo87IUyVw==
   dependencies:
-    micromatch "^4.0.2"
-    slash "^3.0.0"
+    enhanced-resolve "^5.7.0"
+    escalade "^3.1.1"
 
 next@10.2.3:
   version "10.2.3"
@@ -5820,6 +5828,11 @@ table@^6.0.9:
     slice-ansi "^4.0.0"
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
+
+tapable@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/tapable/-/tapable-2.2.0.tgz#5c373d281d9c672848213d0e037d1c4165ab426b"
+  integrity sha512-FBk4IesMV1rBxX2tfiK8RAmogtWn53puLOQlvO8XuwlgxcYbP4mVPS9Ph4aeamSyyVjOl24aYWAuc8U5kCVwMw==
 
 text-table@^0.2.0:
   version "0.2.0"
