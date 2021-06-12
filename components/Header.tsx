@@ -13,30 +13,27 @@ const TopAction = styled.a`
   margin: 0.25rem;
 `;
 
-export const Header: NextComponentType<
-  NextPageContext,
-  unknown,
-  unknown
-> = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const switchIcon = colorMode === "light" ? faMoon : faSun;
-  return (
-    <Box w="100%" textAlign="end">
-      <TopAction>
-        <IconButton
-          aria-label="switch theme"
-          onClick={toggleColorMode}
-          size="lg"
-          icon={<FontAwesomeIcon icon={switchIcon} />}
-        />
-      </TopAction>
-      <TopAction href={gitUrl} target="_blank">
-        <IconButton
-          aria-label="github link"
-          size="lg"
-          icon={<FontAwesomeIcon icon={faGithub} />}
-        />
-      </TopAction>
-    </Box>
-  );
-};
+export const Header: NextComponentType<NextPageContext, unknown, unknown> =
+  () => {
+    const { colorMode, toggleColorMode } = useColorMode();
+    const switchIcon = colorMode === "light" ? faMoon : faSun;
+    return (
+      <Box w="100%" textAlign="end">
+        <TopAction>
+          <IconButton
+            aria-label="switch theme"
+            onClick={toggleColorMode}
+            size="lg"
+            icon={<FontAwesomeIcon icon={switchIcon} />}
+          />
+        </TopAction>
+        <TopAction href={gitUrl} target="_blank">
+          <IconButton
+            aria-label="github link"
+            size="lg"
+            icon={<FontAwesomeIcon icon={faGithub} />}
+          />
+        </TopAction>
+      </Box>
+    );
+  };

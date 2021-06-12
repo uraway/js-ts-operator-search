@@ -1,6 +1,7 @@
 import { Context } from "../types/api/type";
 
-const CONTEXT_REG_EXP = /^---\nlabel: ([\s\S]*?)\ndescription: ([\s\S]*?)\nlink: ([\s\S]*?)---([\s\S]*)/;
+const CONTEXT_REG_EXP =
+  /^---\nlabel: ([\s\S]*?)\ndescription: ([\s\S]*?)\nlink: ([\s\S]*?)---([\s\S]*)/;
 
 export function parseContext(content: string): null | Context {
   const comment = content.match(CONTEXT_REG_EXP);
