@@ -22,7 +22,7 @@ const Spacer = styled.div`
 
 const filter = (query: string, os: Data[]) => {
   if (query) {
-    return os.filter((item) => item.label.includes(query));
+    return os.filter((item) => item.label.toString().includes(query));
   }
   return [];
 };
