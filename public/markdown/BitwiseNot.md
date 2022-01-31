@@ -16,5 +16,5 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/B
 `11111111111111111111111111110110`は最上位のビットが 1 なので負の数を表しています。また、これの補数(ビットを反転させて 1 を足す)を取ると、`00000000000000000000000000001010 = 10 (10進数)`となります。
 
 ```typescript
-console.log(~9); // -10
+console.log(~9) // -10
 ```

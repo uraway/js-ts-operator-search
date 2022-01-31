@@ -1,6 +1,6 @@
-import { LookupValue } from "react-rainbow-components/components/types";
+import { LookupValue } from 'react-rainbow-components/components/types'
 
 export interface Data extends LookupValue {
-  definition: string;
-  link: string;
+    definition: string
+    link: string
 }

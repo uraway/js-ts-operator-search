@@ -7,9 +7,9 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/L
 オペランドの真偽値を反転します
 
 ```typescript
-let x = true;
-let y = "";
-console.log(!x); // false
-console.log(!y); // true
-console.log(!!y); // false
+let x = true
+let y = ''
+console.log(!x) // false
+console.log(!y) // true
+console.log(!!y) // false
 ```

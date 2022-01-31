@@ -9,15 +9,15 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/C
 複数の三項演算子を組み合わせることもできますが、複雑になるためあまり好まれません。
 
 ```typescript
-console.log(0 ? "TRUE" : "FALSE"); // "FALSE"
+console.log(0 ? 'TRUE' : 'FALSE') // "FALSE"
 
-const x = false;
-const y = true;
+const x = false
+const y = true
 console.log(
-  x && y
-    ? "x is true, y is true"
-    : x || y
-    ? "x or y is true"
-    : "x is false, y is false"
-); // x or y is false
+    x && y
+        ? 'x is true, y is true'
+        : x || y
+        ? 'x or y is true'
+        : 'x is false, y is false'
+) // x or y is false
 ```

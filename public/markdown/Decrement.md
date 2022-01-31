@@ -7,7 +7,7 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/D
 オペランドをデクリメント(1 減算)して値を返します。
 
 ```typescript
-let x = 1;
-x--;
-console.log(x); // 0
+let x = 1
+x--
+console.log(x) // 0
 ```
