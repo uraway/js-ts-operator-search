@@ -25,16 +25,20 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14.x"
-      - uses: actions/cache@v2
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        id: cache
         with:
           path: |
-            '**/node_modules'
+            node_modules
+            packages/*/node_modules
             /home/runner/.cache/Cypress
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-modules-
-      - name: Install Dependencies
-        run: yarn install
+          key: v1-node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+
+      - name: Install node_modules
+        run: yarn --check-files --frozen-lockfile --non-interactive
+
       - name: Run lint
         run: yarn lint
       - uses: cypress-io/github-action@v2
