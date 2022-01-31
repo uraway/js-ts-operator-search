@@ -4,21 +4,12 @@ import { getAbsoluteUrl } from "../utils";
 import { Heading, SlideFade } from "@chakra-ui/react";
 import { Lookup } from "react-rainbow-components";
 import { NextPage } from "next";
-import { Transition } from "react-transition-group";
 import fetch from "isomorphic-fetch";
 import React, { useCallback, useState } from "react";
-import styled from "styled-components";
-import { TransitionStatus } from "react-transition-group/Transition";
 
 type Props = {
   data: Data[];
 };
-
-const Spacer = styled.div`
-  margin-top: ${({ state }: { state: TransitionStatus }) =>
-    state === "entering" || state === "entered" ? 50 : 150}px;
-  transition: all 1000ms ease;
-`;
 
 const filter = (query: string, os: Data[]) => {
   if (query) {
@@ -56,34 +47,29 @@ const Home: NextPage<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <Transition in={!!value} timeout={500}>
-        {(state) => (
-          <>
-            <Spacer state={state} />
-            <Heading
-              size="lg"
-              style={{
-                marginBottom: "29px",
-                textAlign: "center",
-              }}
-            >
-              JavaScript/TypeScript 演算子検索
-            </Heading>
-            <Lookup
-              id="lookup"
-              options={options}
-              value={value}
-              onChange={onChange}
-              onSearch={onSearch}
-              onClick={onClear}
-            />
-          </>
-        )}
-      </Transition>
-      <SlideFade in={!!value} offsetY={20}>
+      <Heading
+        size="lg"
+        style={{
+          marginBottom: "29px",
+          textAlign: "center",
+        }}
+      >
+        JavaScript/TypeScript 演算子検索
+      </Heading>
+      <Lookup
+        id="lookup"
+        options={options}
+        value={value}
+        onChange={onChange}
+        onSearch={onSearch}
+        onClick={onClear}
+      />
+      <SlideFade in={!value} unmountOnExit offsetY="100px">
+        <List options={data} value={value} onClick={onChange} />
+      </SlideFade>
+      <SlideFade in={!!value} unmountOnExit offsetY="100px">
         <Description value={value} />
       </SlideFade>
-      <List options={data} value={value} onClick={onChange} />
     </Layout>
   );
 };
