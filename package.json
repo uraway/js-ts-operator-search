@@ -28,7 +28,7 @@
     "react-rainbow-components": "1.29.0",
     "react-syntax-highlighter": "15.4.4",
     "react-transition-group": "4.4.2",
-    "remark-gfm": "1.0.0",
+    "remark-gfm": "3.0.1",
     "styled-components": "5.3.3"
   },
   "devDependencies": {
