@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint --ext .js,.ts,.jsx,.tsx ./",
-    "lint:prettier": "prettier . --check"
+    "lint:prettier": "prettier . --check",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/react": "1.6.10",
@@ -43,6 +44,7 @@
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.0",
     "eslint-plugin-react": "7.26.1",
+    "husky": "7.0.4",
     "next-fonts": "1.5.1",
     "next-transpile-modules": "8.0.0",
     "prettier": "2.4.1",
