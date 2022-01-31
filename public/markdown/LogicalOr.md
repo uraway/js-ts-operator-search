@@ -7,8 +7,8 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/L
 どれかひとつのオペランドが真である場合、真を返します。
 
 ```typescript
-let x = true;
-let y = false;
-console.log(x || y); // true
-console.log((x && y) || y); // false
+let x = true
+let y = false
+console.log(x || y) // true
+console.log((x && y) || y) // false
 ```

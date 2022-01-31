@@ -7,7 +7,7 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/R
 左のオペランドを右のオペランドで割った余りを返します。
 
 ```typescript
-console.log(4 % 1); // 0
-console.log(4 % 3); // 1
-console.log(1 % 4); // 1
+console.log(4 % 1) // 0
+console.log(4 % 3) // 1
+console.log(1 % 4) // 1
 ```

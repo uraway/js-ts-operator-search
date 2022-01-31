@@ -9,13 +9,13 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/C
 `for`文と併用する以外の場面で見たことがありません。
 
 ```typescript
-let x = 1;
+let x = 1
 
-x = (x++, x);
+x = (x++, x)
 
-console.log(x); // 2
+console.log(x) // 2
 
 for (var i = 0, j = 9; i <= 9; i++, j--) {
-  console.log(`i: ${i}, j: ${j}`);
+  console.log(`i: ${i}, j: ${j}`)
 }
 ```

@@ -7,7 +7,7 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/I
 オペランドをインクリメント(1 加算)して返します。
 
 ```typescript
-let x = 1;
-x++;
-console.log(x); // 2
+let x = 1
+x++
+console.log(x) // 2
 ```

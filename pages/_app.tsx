@@ -1,8 +1,8 @@
-import React from "react";
-import type { AppProps /*, AppContext */ } from "next/app";
-import "../styles/globals.css";
-import Head from "next/head";
-import { ChakraProvider } from "@chakra-ui/react";
+import React from 'react'
+import type { AppProps /*, AppContext */ } from 'next/app'
+import '../styles/globals.css'
+import Head from 'next/head'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
   return (
@@ -14,8 +14,8 @@ const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
         <Component {...pageProps} />
       </ChakraProvider>
     </>
-  );
-};
+  )
+}
 
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to
@@ -29,4 +29,4 @@ const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
 //   return { ...appProps }
 // }
 
-export default MyApp;
+export default MyApp

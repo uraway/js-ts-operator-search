@@ -7,7 +7,7 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/U
 オペランドが文字列である場合、数値に変換します。
 
 ```typescript
-console.log(+4); // 4
-console.log(+"4"); // 4
-console.log(+""); // 0
+console.log(+4) // 4
+console.log(+'4') // 4
+console.log(+'') // 0
 ```
