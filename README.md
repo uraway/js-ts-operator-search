@@ -1,30 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# JS TS Operator Search
 
-## Getting Started
+検索性の低い、JS・TS の演算子の検索ツールです。
 
-First, run the development server:
+![](images/usage.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 背景
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 演算子の検索性の低さ
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+[約物](https://ja.wikipedia.org/wiki/%E7%B4%84%E7%89%A9)は Google 検索ではクエリとして認識されません。演算子を検索するためには、演算子の名称（英語の検索結果が欲しければ英語で、日本語の検索結果が欲しければ日本語で）を覚えておかなければならないという問題点があります。
 
-## Learn More
+![Null合体演算子をGoogle検索する](images/current_google_search.png)
+Null 合体演算子を Google 検索する
 
-To learn more about Next.js, take a look at the following resources:
+![期待するGoogle検索の結果](images/desired_google_search.png)
+期待する Google 検索の結果
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[Operator Lookup](https://www.joshwcomeau.com/operator-lookup/)は、この問題を解決する素晴らしいツールですが、「日本語でこの演算子はなんと呼ぶのだろう？」という問題の解決にはなりませんでした。そのため、Operator Lookup の日本語版として、本ツールを作成しました。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## コントリビューション
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+追加してほしい演算子やその他意見・感想があれば[Issue](https://github.com/uraway/js-ts-operator-search/issues)までお寄せください。
