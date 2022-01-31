@@ -14,8 +14,8 @@ const Container = styled.div`
   margin-top: 40px;
 `;
 
-export const List: NextComponentType<NextPageContext, unknown, Props> = React.memo(
-  ({ options, onClick }) => {
+export const List: NextComponentType<NextPageContext, unknown, Props> =
+  React.memo(({ options, onClick }) => {
     return (
       <Container className="rainbow-p-vertical_large rainbow-align-content_center rainbow-flex_wrap">
         {options.map((option, index) => (
@@ -33,7 +33,6 @@ export const List: NextComponentType<NextPageContext, unknown, Props> = React.me
         ))}
       </Container>
     );
-  }
-);
+  });
 
 List.displayName = "List";
