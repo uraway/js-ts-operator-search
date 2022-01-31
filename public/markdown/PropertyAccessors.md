@@ -8,9 +8,9 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/P
 
 ```typescript
 let obj = {
-    hello: {
-        world: 'hi',
-    },
+  hello: {
+    world: 'hi',
+  },
 }
 console.log(obj.hello.world) // "hi"
 console.log(obj['hello']['world']) // "hi"

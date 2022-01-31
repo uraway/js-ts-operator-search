@@ -14,10 +14,10 @@ console.log(0 ? 'TRUE' : 'FALSE') // "FALSE"
 const x = false
 const y = true
 console.log(
-    x && y
-        ? 'x is true, y is true'
-        : x || y
-        ? 'x or y is true'
-        : 'x is false, y is false'
+  x && y
+    ? 'x is true, y is true'
+    : x || y
+    ? 'x or y is true'
+    : 'x is false, y is false'
 ) // x or y is false
 ```

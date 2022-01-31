@@ -12,14 +12,14 @@ const y = [0]
 console.log([...y, ...x]) // [0, 2, 3, 5, 7, 11]
 
 let a = {
-    hello: 'hello',
+  hello: 'hello',
 }
 let b = {
-    world: 'world',
+  world: 'world',
 }
 a = {
-    ...a,
-    ...b,
+  ...a,
+  ...b,
 }
 console.log(a) // { hello: "hello", world: "world" }
 ```

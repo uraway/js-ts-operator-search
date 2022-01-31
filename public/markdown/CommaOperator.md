@@ -16,6 +16,6 @@ x = (x++, x)
 console.log(x) // 2
 
 for (var i = 0, j = 9; i <= 9; i++, j--) {
-    console.log(`i: ${i}, j: ${j}`)
+  console.log(`i: ${i}, j: ${j}`)
 }
 ```

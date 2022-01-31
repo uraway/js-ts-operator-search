@@ -5,16 +5,16 @@ import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
 
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
-    return (
-        <>
-            <Head>
-                <title>JavaScript/TypeScript 演算子検索</title>
-            </Head>
-            <ChakraProvider>
-                <Component {...pageProps} />
-            </ChakraProvider>
-        </>
-    )
+  return (
+    <>
+      <Head>
+        <title>JavaScript/TypeScript 演算子検索</title>
+      </Head>
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for

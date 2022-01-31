@@ -1,6 +1,6 @@
 export type Context = {
-    label: string
-    description: string
-    link: string
-    definition: string
+  label: string
+  description: string
+  link: string
+  definition: string
 }
