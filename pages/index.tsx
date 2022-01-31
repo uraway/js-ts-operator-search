@@ -6,6 +6,7 @@ import { Lookup } from 'react-rainbow-components'
 import { NextPage } from 'next'
 import fetch from 'isomorphic-fetch'
 import React, { useCallback, useState } from 'react'
+import { LookupValue } from 'react-rainbow-components/components/types'
 
 type Props = {
   data: Data[]
@@ -13,7 +14,7 @@ type Props = {
 
 const filter = (query: string, os: Data[]) => {
   if (query) {
-    return os.filter((item) => item.label.toString().includes(query))
+    return os.filter((item) => item?.label?.toString().includes(query))
   }
   return []
 }
@@ -21,7 +22,7 @@ const filter = (query: string, os: Data[]) => {
 const Home: NextPage<Props> = ({ data }) => {
   const [value, setValue] = useState<Data | undefined>()
   const [inputValue, setInputValue] = useState('')
-  const [options, setOptions] = useState<Data[] | null>(null)
+  const [options, setOptions] = useState<Data[] | undefined>()
 
   const onSearch = (newInputValue: string) => {
     if (!!options && newInputValue?.length > inputValue?.length) {
@@ -32,17 +33,25 @@ const Home: NextPage<Props> = ({ data }) => {
       setOptions(filter(newInputValue, data))
     } else {
       setInputValue(inputValue)
-      setOptions(null)
+      setOptions(undefined)
     }
   }
 
-  const onChange = useCallback((value: Data) => {
-    setValue(value)
-  }, [])
+  const onChange = useCallback(
+    (value: LookupValue | null) => {
+      if (value) {
+        const selectedOption = data?.find((o) => o.label === value.label)
+        setValue(selectedOption)
+      } else {
+        setValue(undefined)
+      }
+    },
+    [data]
+  )
 
   const onClear = () => {
     setValue(undefined)
-    setOptions(null)
+    setOptions(undefined)
   }
 
   return (
@@ -65,7 +74,7 @@ const Home: NextPage<Props> = ({ data }) => {
         onClick={onClear}
       />
       <SlideFade in={!value} unmountOnExit offsetY="100px">
-        <List options={data} value={value} onClick={onChange} />
+        <List options={data} onClick={onChange} />
       </SlideFade>
       <SlideFade in={!!value} unmountOnExit offsetY="100px">
         <Description value={value} />
@@ -75,7 +84,7 @@ const Home: NextPage<Props> = ({ data }) => {
 }
 
 Home.getInitialProps = async ({ req }) => {
-  const { origin } = getAbsoluteUrl(req, 'localhost:3000')
+  const { origin } = getAbsoluteUrl('localhost:3000', req)
   const res = await fetch(`${origin}/api/hello`)
   const { data } = await res.json()
   return { data }

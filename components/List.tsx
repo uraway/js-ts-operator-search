@@ -5,7 +5,6 @@ import { Data } from '../types/data'
 import { Button } from '@chakra-ui/react'
 
 type Props = {
-  value: Data
   options: Data[]
   onClick: (value: Data) => void
 }
