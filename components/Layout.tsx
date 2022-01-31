@@ -13,7 +13,9 @@ export const ChildrenWrapper = styled.div`
   margin-top: 10vh;
 `;
 
-export const Layout: NextComponentType<NextPageContext, unknown, unknown> = ({ children }) => {
+export const Layout: NextComponentType<NextPageContext, unknown, unknown> = ({
+  children,
+}) => {
   return (
     <MainWrapper>
       <Header />
