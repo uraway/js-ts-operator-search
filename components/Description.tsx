@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Data } from "../types/data";
 import { NextComponentType, NextPageContext } from "next";
 import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
+import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Box, Divider, Heading } from "@chakra-ui/react";
@@ -61,7 +61,7 @@ export const Description: NextComponentType<NextPageContext, unknown, Props> =
                 );
               },
             }}
-            plugins={[gfm]}
+            remarkPlugins={[remarkGfm]}
             skipHtml
           >
             {value?.definition}
@@ -77,3 +77,5 @@ export const Description: NextComponentType<NextPageContext, unknown, Props> =
       </Card>
     );
   };
+
+Description.displayName = "Description";
