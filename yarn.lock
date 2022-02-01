@@ -2020,6 +2020,11 @@ dayjs@^1.10.4:
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.5.tgz#5600df4548fc2453b3f163ebb2abbe965ccfb986"
   integrity sha512-BUFis41ikLz+65iH6LHQCDm4YPMj5r1YFLdupPIyM4SGcXMmtiLQ7U37i+hGS8urIuqe7I/ou3IS1jVc4nbN4g==
 
+debounce@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
+
 debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -2718,14 +2723,16 @@ format@^0.2.0:
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
   integrity sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs=
 
-framer-motion@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.0.0.tgz#8d40edd1c04f3aa5d984e30c31551dc12504ba02"
-  integrity sha512-5X2ng9Cil9srkS9+ynxYmQf02yDnEUueGiGq20+sRdh7OiwLb7QWnw4Jysj/MiL3VYSMtGLd+zKFlH/HQB285A==
+framer-motion@5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.6.0.tgz#8203b5bc4e172265d43dfe67c3c41346c67a3940"
+  integrity sha512-Y4FtwUU+LUWLKSzoT6Sq538qluvhpe6izdQK8/xZeVjQZ/ORKGfZzyhzcUxNfscqnfEa3dUOA47s+dwrSipdGA==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
-    popmotion "10.0.2"
+    popmotion "11.0.3"
+    react-merge-refs "^1.1.0"
+    react-use-measure "^2.1.1"
     style-value-types "5.0.0"
     tslib "^2.1.0"
   optionalDependencies:
@@ -2744,13 +2751,6 @@ framesync@6.0.1:
   integrity sha512-fUY88kXvGiIItgNC7wcTOl0SNRCVXMKSWW2Yzfmn7EKNc+MpCzcz9DhdHcdjbrtN3c6R4H5dTY2jiCpPdysEjA==
   dependencies:
     tslib "^2.1.0"
-
-framesync@^6.0.1:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/framesync/-/framesync-6.1.0.tgz#b22cf9afba52a9a895668b09e033b6a61e901c41"
-  integrity sha512-aBX+hdWAvwiJYeQlFLY2533VxeL6OEu71CAgV4GGKksrj6+dE6i7K86WSSiRBEARCoJn5bFqffhg4l07eA27tg==
-  dependencies:
-    tslib "^2.3.1"
 
 fs-extra@^9.1.0:
   version "9.1.0"
@@ -4355,12 +4355,12 @@ pify@^2.2.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
   integrity sha1-7RQaasBDqEnqWISY59yosVMw6Qw=
 
-popmotion@10.0.2:
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-10.0.2.tgz#edb87efb2ba39505d07f79d3ca8cc4b1cbe101bf"
-  integrity sha512-8vgx02LL7Odk/kwSGigAnlPRLJK+Dfked571ZAHGzkxPNWThkU5mQX0xPmibIMAULZehWBV7hGN7LSCpaV3cfw==
+popmotion@11.0.3:
+  version "11.0.3"
+  resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-11.0.3.tgz#565c5f6590bbcddab7a33a074bb2ba97e24b0cc9"
+  integrity sha512-Y55FLdj3UxkR7Vl3s7Qr4e9m0onSnP8W7d/xQLsoJM40vs6UKHFdygs6SWryasTZYqugMjm3BepCF4CWXDiHgA==
   dependencies:
-    framesync "^6.0.1"
+    framesync "6.0.1"
     hey-listen "^1.0.8"
     style-value-types "5.0.0"
     tslib "^2.1.0"
@@ -4527,6 +4527,11 @@ react-markdown@8.0.0:
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
+react-merge-refs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
+  integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
+
 react-remove-scroll-bar@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-remove-scroll-bar/-/react-remove-scroll-bar-2.1.0.tgz#edafe9b42a42c0dad9bdd10712772a1f9a39d7b9"
@@ -4575,6 +4580,13 @@ react-transition-group@4.4.2:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-use-measure@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-use-measure/-/react-use-measure-2.1.1.tgz#5824537f4ee01c9469c45d5f7a8446177c6cc4ba"
+  integrity sha512-nocZhN26cproIiIduswYpV5y5lQpSQS1y/4KuvUCjSKmw7ZWIS/+g3aFnX3WdBkyuGUtTLif3UTqnLLhbDoQig==
+  dependencies:
+    debounce "^1.2.1"
 
 react@17.0.2:
   version "17.0.2"
@@ -5101,7 +5113,7 @@ tslib@^1.0.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3, tslib@^2.3.1:
+tslib@^2.0.3:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
