@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.35",
-    "@types/node": "16.11.21",
+    "@types/node": "16.11.22",
     "@types/react": "17.0.38",
     "@types/react-syntax-highlighter": "13.5.2",
     "@types/react-transition-group": "4.4.4",
