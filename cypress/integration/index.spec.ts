@@ -7,7 +7,7 @@ context('Actions', () => {
 
   it('filters options', () => {
     cy.get('#lookup').type('??')
-    cy.get('li')
+    cy.get('[data-cy=option-item]')
       .should('have.length', 2)
       .first()
       .should('contain.text', '??=')
@@ -18,15 +18,12 @@ context('Actions', () => {
       'contain.text',
       '左の変数が null または undefined である場合のみ、右の値を代入します'
     )
-
-    cy.get('#lookup').click().should('have.text', '')
-    cy.get('li').should('have.length', 0)
   })
 
   it('clicks button', () => {
     cy.get('[data-cy=option-item]').last().click()
 
-    cy.get('#lookup > div > input').should('have.value', '>>>=')
+    cy.get('#lookup').should('have.value', '>>>=')
     cy.get('[data-cy=heading]').should(
       'contain.text',
       '符号なし右シフト代入演算子'
