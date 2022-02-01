@@ -5,8 +5,7 @@ import { Data } from '../types/data'
 import { Button } from '@chakra-ui/react'
 
 type Props = {
-  value: Data
-  options: Data[]
+  options?: Data[]
   onClick: (value: Data) => void
 }
 
@@ -15,7 +14,7 @@ const Container = styled.div`
 `
 
 export const List: NextComponentType<NextPageContext, unknown, Props> =
-  React.memo(({ options, onClick }) => {
+  React.memo(({ options = [], onClick }) => {
     return (
       <Container className="rainbow-p-vertical_large rainbow-align-content_center rainbow-flex_wrap">
         {options.map((option, index) => (

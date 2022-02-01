@@ -3,9 +3,9 @@ import { Box, IconButton } from '@chakra-ui/react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { NextComponentType, NextPageContext } from 'next'
 import { useColorMode } from '@chakra-ui/react'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
 const gitUrl = 'https://github.com/uraway/js-ts-operator-search/'
 
@@ -19,19 +19,21 @@ export const Header: NextComponentType<
   unknown
 > = () => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const switchIcon = colorMode === 'light' ? faMoon : faSun
+  const ThemeIcon = colorMode === 'light' ? MoonIcon : SunIcon
   return (
     <Box w="100%" textAlign="end">
       <TopAction>
         <IconButton
+          variant="ghost"
           aria-label="switch theme"
           onClick={toggleColorMode}
           size="lg"
-          icon={<FontAwesomeIcon icon={switchIcon} />}
+          icon={<ThemeIcon />}
         />
       </TopAction>
       <TopAction href={gitUrl} target="_blank">
         <IconButton
+          variant="ghost"
           aria-label="github link"
           size="lg"
           icon={<FontAwesomeIcon icon={faGithub} />}
