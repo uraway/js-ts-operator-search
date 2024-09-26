@@ -1,5 +1,5 @@
 ---
-label: |
+label: |=
 description: ビット論理和代入演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Bitwise_OR_assignment
 ---

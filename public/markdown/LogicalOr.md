@@ -1,5 +1,5 @@
 ---
-label: |
+label: ||
 description: 論理和演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Logical_OR
 ---

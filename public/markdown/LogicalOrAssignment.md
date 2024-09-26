@@ -10,6 +10,6 @@ link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/L
 let x = 0
 let y = 4
 
-console.log((x &&= 1)) // 1
-console.log((y &&= 1)) // 4
+console.log((x ||= 1)) // 1
+console.log((y ||= 1)) // 4
 ```

@@ -1,5 +1,5 @@
 ---
-label: >
+label: >=
 description: 大なりイコール演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Greater_than_or_equal
 ---

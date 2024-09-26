@@ -1,5 +1,5 @@
 ---
-label: >
+label: >>
 description: 右シフト演算子
 link: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Right_shift
 ---
