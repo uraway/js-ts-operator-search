@@ -28,7 +28,7 @@
     "react-syntax-highlighter": "15.5.0",
     "react-transition-group": "4.4.2",
     "remark-gfm": "3.0.1",
-    "styled-components": "5.3.5"
+    "styled-components": "5.3.11"
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.36",
@@ -36,7 +36,7 @@
     "@types/react": "17.0.42",
     "@types/react-syntax-highlighter": "13.5.2",
     "@types/react-transition-group": "4.4.4",
-    "@types/styled-components": "5.1.24",
+    "@types/styled-components": "5.1.36",
     "@typescript-eslint/eslint-plugin": "5.16.0",
     "@typescript-eslint/parser": "5.16.0",
     "cypress": "9.5.2",
